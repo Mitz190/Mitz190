@@ -1,0 +1,78 @@
+body{
+  background: cadetblue;
+  font-family: Arial, Helvetica, sans-serif;
+  height:100%;
+}
+.container{
+  width:800px;
+  margin:30px auto;
+  color:white;
+  text-align: center;
+}
+h1,h2,h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 2.6rem;
+  text-transform:capitalize ;
+}
+#seconds,#tens{
+  font-size:2em;
+}
+button{
+  width:150px;
+  height:50px;
+  background-color: tomato;
+  border:2px solid auto;
+  border-radius :2px;
+  background:transparent;
+  outline:black;
+}
+button:hover{
+  background: wheat;
+  color:cadetblue;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+// javascript code here
+var seconds=00;
+var tens=00;
+var appendTens=document.getElementById("tens");
+var appendSeconds=document.getElementById("seconds");
+var buttonStart = document.getElementById("button-start");
+var buttonStop = document.getElementById("button-stop");
+var buttonReset = document.getElementById("button-reset");
+
+var interval;
+function startTimer(){
+    tens++;
+
+    if(tens<9){
+        appendTens.innerHTML="0"+tens;   // to add a '0' in from of digit when it is less than 10. So that it looks more real.
+    }
+    if (tens>9){
+        appendTens.innerHTML=tens;
+    }
+    if(tens>99){
+        seconds++
+        appendSeconds.innerHTML="0"+seconds;
+        tens=0;
+        appendTens.innerHTML="0"+0;
+    }
+    if(seconds>9){
+        appendSeconds.innerHTML=seconds;
+    }
+}
+
+buttonStart.onclick=function(){
+    interval=setInterval(startTimer,10);
+};
+buttonStop.onclick=function(){
+    clearInterval(interval);
+};
+buttonReset.onclick=function(){       //to reset the timer
+    clearInterval(interval);
+    tens="00";
+    seconds="00";
+    appendSeconds.innerHTML=seconds;
+    appendTens.innerHTML=tens;
+}
