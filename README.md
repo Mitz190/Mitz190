@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Mitz190
-- 👀 I’m interested in web development
+- 👀 I’m interested in web development,Contributing for projects in Java 
 - 🌱 I’m currently learning Bachelor of science CS
 - I'll be uploading the projects which I learn via youtube and self creation you are free to view it .If you still reading this have a good luck and all the best for future!!.
 - Happyy Coding!!!!
